@@ -1,4 +1,7 @@
 [
+    { "command": "open_context_url" },
+    { "command": "context_goto_definition", "caption": "Перейти к определению" },
+    { "caption": "-", "id": "clipboard" },
     { "command": "copy", "caption": "Копировать" },
     { "command": "cut", "caption": "Вырезать" },
     { "command": "paste", "caption": "Вставить" },
