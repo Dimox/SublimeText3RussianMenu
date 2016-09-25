@@ -875,6 +875,8 @@
             { "command": "open_url", "args": {"url": "http://www.sublimetext.com/docs/3/"}, "caption": "Документация" },
             { "command": "open_url", "args": {"url": "http://twitter.com/sublimehq"}, "caption": "Twitter" },
             { "caption": "-" },
+            { "command": "show_progress_window", "caption": "Статус индексации…" },
+            { "caption": "-" },
             { "command": "purchase_license", "caption": "Купить лицензию"},
             { "command": "show_license_window", "caption": "Ввести лицензию" },
             { "command": "remove_license", "caption": "Удалить лицензию"},
