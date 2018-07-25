@@ -1,5 +1,5 @@
 [
-    { "command": "open_context_url" },
+    { "command": "open_context_url", "caption": "Открыть контекстный URL" },
     { "command": "context_goto_definition", "caption": "Перейти к определению" },
     { "caption": "-", "id": "clipboard" },
     { "command": "copy", "caption": "Копировать" },

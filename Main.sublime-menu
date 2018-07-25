@@ -265,6 +265,7 @@
                 [
                     { "command": "wrap_lines", "caption": "Ограничить текст по линейке" },
                     { "command": "wrap_lines", "args": {"width": 70}, "caption": "Ограничить текст 70 знаками" },
+                    { "command": "wrap_lines", "args": {"width": 72}, "caption": "Ограничить текст 72 знаками" },
                     { "command": "wrap_lines", "args": {"width": 78}, "caption": "Ограничить текст 78 знаками" },
                     { "command": "wrap_lines", "args": {"width": 80}, "caption": "Ограничить текст 80 знаками" },
                     { "command": "wrap_lines", "args": {"width": 100}, "caption": "Ограничить текст 100 знаками" },
@@ -584,6 +585,7 @@
                     { "command": "set_setting", "args": {"setting": "wrap_width", "value": 0}, "caption": "Автоматическая", "checkbox": true },
                     { "caption": "-" },
                     { "command": "set_setting", "args": {"setting": "wrap_width", "value": 70}, "caption": "70 символов", "checkbox": true },
+                    { "command": "set_setting", "args": {"setting": "wrap_width", "value": 72}, "caption": "72", "checkbox": true },
                     { "command": "set_setting", "args": {"setting": "wrap_width", "value": 78}, "caption": "78 символов", "checkbox": true },
                     { "command": "set_setting", "args": {"setting": "wrap_width", "value": 80}, "caption": "80 символов", "checkbox": true },
                     { "command": "set_setting", "args": {"setting": "wrap_width", "value": 100}, "caption": "100 символов", "checkbox": true },
@@ -597,6 +599,7 @@
                     { "command": "set_setting", "args": {"setting": "rulers", "value": []}, "caption": "Нет", "checkbox": true },
                     { "caption": "-" },
                     { "command": "set_setting", "args": {"setting": "rulers", "value": [70]}, "caption": "70 символов", "checkbox": true },
+                    { "command": "set_setting", "args": {"setting": "rulers", "value": [72]}, "caption": "72", "checkbox": true },
                     { "command": "set_setting", "args": {"setting": "rulers", "value": [78]}, "caption": "78 символов", "checkbox": true },
                     { "command": "set_setting", "args": {"setting": "rulers", "value": [80]}, "caption": "80 символов", "checkbox": true },
                     { "command": "set_setting", "args": {"setting": "rulers", "value": [100]}, "caption": "100 символов", "checkbox": true },
@@ -624,6 +627,7 @@
             { "command": "show_overlay", "args": {"overlay": "goto", "text": "@"}, "caption": "Перейти к идентификатору…" },
             { "command": "goto_symbol_in_project", "caption": "Перейти к идентификатору в проекте…" },
             { "command": "goto_definition", "caption": "Перейти к определению…" },
+            { "command": "goto_reference", "caption": "Перейти к упоминанию…" },
             // { "command": "show_overlay", "args": {"overlay": "goto", "text": "#"}, "caption": "Перейти к слову…" },
             { "command": "show_overlay", "args": {"overlay": "goto", "text": ":"}, "caption": "Перейти к строке…" },
             { "caption": "-" },
@@ -766,7 +770,7 @@
                     { "command": "new_plugin", "caption": "Новый плагин…" },
                     { "command": "new_snippet", "caption": "Новый сниппет…" },
                     { "command": "new_syntax", "caption": "Новый синтаксис…" },
-                    { "command": "convert_syntax" },
+                    { "command": "convert_syntax", "caption": "Конвертировать синтаксис" },
                     { "caption": "-" },
                     { "command": "profile_plugins", "caption": "Данные по событиям плагинов" },
                     { "caption": "-" },
@@ -821,7 +825,7 @@
         "id": "preferences",
         "children":
         [
-            { "command": "open_dir", "args": {"dir": "$packages"}, "caption": "Просмотр плагинов…", "mnemonic": "B" },
+            { "command": "open_dir", "args": {"dir": "$packages"}, "caption": "Открыть папку с плагинами…", "mnemonic": "B" },
             { "caption": "-" },
             {
                 "command": "edit_settings", "args":
@@ -851,6 +855,14 @@
             },
             { "caption": "-" },
             {
+                "caption": "Цветовая схема…",
+                "command": "select_color_scheme"
+            },
+            {
+                "caption": "Тема…",
+                "command": "select_theme"
+            },
+            {
                 "caption": "Размер текста",
                 "children":
                 [
@@ -860,10 +872,6 @@
                     { "command": "reset_font_size", "caption": "Сбросить" }
                 ]
             },
-            {
-                "caption": "Цветовая схема",
-                "children": [ { "command": "$color_schemes" } ]
-            }
         ]
     },
     {
@@ -878,6 +886,7 @@
             { "command": "show_progress_window", "caption": "Статус индексации…" },
             { "caption": "-" },
             { "command": "purchase_license", "caption": "Купить лицензию"},
+            { "command": "upgrade_license", "caption": "Улучшить лицензию"},
             { "command": "show_license_window", "caption": "Ввести лицензию" },
             { "command": "remove_license", "caption": "Удалить лицензию"},
             { "caption": "-" },
